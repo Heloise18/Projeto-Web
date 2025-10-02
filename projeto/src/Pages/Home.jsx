@@ -10,7 +10,7 @@ function Home() {
     },[])
 
     const [character, setCharacter] = useState("");
-    const [charac, setCharac] = useState("");
+    const [charac, setCharac] = useState([]);
     
     const getCharac = async () => {
         const response = await axios.get("https://potterhead-api.vercel.app/api/characters");
@@ -19,17 +19,19 @@ function Home() {
     
     const OpenCharacPage = (name) => {
 
-        navigate()('/Profile', {state: {name}})
+        navigate('/Profile', {state: {name}})
     }
     return (
         <>
             <h1>Home</h1>
             <h2>Digite o nome do personagem: </h2>
             <input type="text"  onChange={(e) => setCharacter(e.target.value) }/>
-            {/* {charac.map(())
+            
+            {charac.map((name) => (
+                    <button onClick={() => OpenCharacPage()}>{character}</button>
+                ))
 
-            } */}
-            <button onClick={() => OpenCharacPage()}>{character}</button>
+            }
 
 
         </>

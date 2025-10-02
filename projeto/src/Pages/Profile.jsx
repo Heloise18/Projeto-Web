@@ -14,4 +14,4 @@ function Profile() {
     )
 }
 
-export default Home
+export default Profile
