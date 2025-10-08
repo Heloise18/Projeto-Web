@@ -2,15 +2,16 @@ import { useState } from 'react'
 import { BrowserRouter, Routes, Route} from "react-router-dom"
 import './App.css'
 import Home from './Pages/Home'
+import Profile from './Pages/Profile'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
+          <Route path='/profile/' element={<Profile></Profile>}></Route>
         </Routes>
       </BrowserRouter>
     </>
